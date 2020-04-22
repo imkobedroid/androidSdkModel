@@ -40,7 +40,7 @@ class LyManager {
                 }
                 else -> {
                     val instance by lazy(mode = LazyThreadSafetyMode.SYNCHRONIZED) {
-                        LyManager(hiFiveContext!!)
+                        LyManager()
                     }
                     instance
                 }

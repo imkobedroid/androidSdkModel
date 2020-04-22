@@ -16,7 +16,7 @@ import com.ilongyuan.lysdk.widget.CircleProgressDialog
  * @author Dsh  imkobedroid@gmail.com
  * @date 2019-07-09
  */
-class LyManager(val context: Context) : BaseController() {
+class LyManager : BaseController() {
 
 
     init {
