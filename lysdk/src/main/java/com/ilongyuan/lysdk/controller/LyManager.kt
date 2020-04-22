@@ -1,6 +1,5 @@
 package com.ilongyuan.lysdk.controller
 
-import android.app.Application
 import android.content.Context
 import com.ilongyuan.lysdk.common.BaseConstance.Companion.SUCCEED
 import com.ilongyuan.lysdk.common.BaseException
@@ -11,18 +10,13 @@ import com.ilongyuan.lysdk.hInterface.DataResponse
 import com.ilongyuan.lysdk.injection.module.ServiceModule
 import com.ilongyuan.lysdk.rx.BaseSubscribe
 import com.ilongyuan.lysdk.widget.CircleProgressDialog
-import com.tsy.sdk.myokhttp.MyOkHttp
-import com.tsy.sdk.myokhttp.response.DownloadResponseHandler
-import okhttp3.OkHttpClient
-import java.io.File
-import java.util.concurrent.TimeUnit
 
 
 /**
  * @author Dsh  imkobedroid@gmail.com
  * @date 2019-07-09
  */
-class MusicManager(val context: Context) : BaseController() {
+class LyManager(val context: Context) : BaseController() {
 
 
     init {
@@ -300,44 +294,6 @@ class MusicManager(val context: Context) : BaseController() {
                 override fun onComplete() {
                     super.onComplete()
                     if (dialog.isShowing) dialog.dismiss()
-                }
-            })
-    }
-
-
-    override fun downLoadLRC(
-        context: Application,
-        lrc: String,
-        path: String,
-        dataResponse: DataResponse
-    ) {
-        val down by lazy {
-            val okHttpClient = OkHttpClient.Builder()
-                .connectTimeout(10000L, TimeUnit.MILLISECONDS)
-                .readTimeout(10000L, TimeUnit.MILLISECONDS)
-                //其他配置
-                .build()
-            MyOkHttp(okHttpClient)
-        }
-
-        down.download()
-            .url(lrc)
-            .filePath(path)
-            .tag(this)
-            .enqueue(object : DownloadResponseHandler() {
-                override fun onStart(totalBytes: Long) {
-                }
-
-                override fun onFinish(downloadFile: File) {
-                    dataResponse.data(downloadFile)
-                }
-
-                override fun onProgress(currentBytes: Long, totalBytes: Long) {
-
-                }
-
-                override fun onFailure(error_msg: String) {
-                    dataResponse.errorMsg(error_msg, null)
                 }
             })
     }

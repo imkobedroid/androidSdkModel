@@ -3,14 +3,14 @@ package com.ilongyuan.lysdk.manager
 import android.annotation.SuppressLint
 import android.app.Application
 import android.content.Context
-import com.ilongyuan.lysdk.controller.MusicManager
+import com.ilongyuan.lysdk.controller.LyManager
 import com.ilongyuan.lysdk.net.Encryption
 
 /**
  * @author Dsh  imkobedroid@gmail.com
  * @date 2019-07-09
  */
-class HiFiveManager {
+class LyManager {
 
     companion object {
         var DEBUG = true
@@ -30,7 +30,7 @@ class HiFiveManager {
         //设备id
         var DEVICE_ID: String? = null
 
-        fun getInstance(): MusicManager? {
+        fun getInstance(): LyManager? {
             return when {
                 hiFiveContext == null || APP_ID.isNullOrEmpty() || SECRET.isNullOrEmpty() -> when {
                     hiFiveContext == null -> throw IllegalArgumentException("Failed to obtain information : The Context cannot be null")
@@ -40,7 +40,7 @@ class HiFiveManager {
                 }
                 else -> {
                     val instance by lazy(mode = LazyThreadSafetyMode.SYNCHRONIZED) {
-                        MusicManager(hiFiveContext!!)
+                        LyManager(hiFiveContext!!)
                     }
                     instance
                 }

@@ -6,12 +6,12 @@ apply from: "config.gradle"
 
 android {
 
-    compileSdkVersion HiFiveVersion.compileSdkVersion
+    compileSdkVersion LyVersion.compileSdkVersion
     defaultConfig {
-        minSdkVersion HiFiveVersion.minSdkVersion
-        targetSdkVersion HiFiveVersion.targetSdkVersion
-        versionCode HiFiveVersion.versionCode
-        versionName HiFiveVersion.versionName
+        minSdkVersion LyVersion.minSdkVersion
+        targetSdkVersion LyVersion.targetSdkVersion
+        versionCode LyVersion.versionCode
+        versionName LyVersion.versionName
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -38,18 +38,17 @@ dependencies {
 
     //打包进sdk的库
     implementation files('libs/dagger-2.23.2.jar')
-    implementation files('libs/downFile.jar')
 
 
     //开发者必须导入的包
-    api HifiveDependencies["javax"]
-    api HifiveDependencies["rxKotlin"]
-    api HifiveDependencies["rxjava"]
-    api HifiveDependencies["rxandroid"]
-    api HifiveDependencies["retrofit"]
-    api HifiveDependencies["retrofit-converter-gson"]
-    api HifiveDependencies["retrofit-adapter-rxjava2"]
-    api HifiveDependencies["okhttp"]
-    api HifiveDependencies["okhttp-logging-interceptor"]
+    api LyDependencies["javax"]
+    api LyDependencies["rxKotlin"]
+    api LyDependencies["rxjava"]
+    api LyDependencies["rxandroid"]
+    api LyDependencies["retrofit"]
+    api LyDependencies["retrofit-converter-gson"]
+    api LyDependencies["retrofit-adapter-rxjava2"]
+    api LyDependencies["okhttp"]
+    api LyDependencies["okhttp-logging-interceptor"]
 
 }

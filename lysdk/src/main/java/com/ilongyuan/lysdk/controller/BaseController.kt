@@ -1,6 +1,5 @@
 package com.ilongyuan.lysdk.controller
 
-import android.app.Application
 import android.content.Context
 import com.ilongyuan.lysdk.hInterface.DataResponse
 import com.ilongyuan.lysdk.service.Service
@@ -153,15 +152,6 @@ abstract class BaseController {
         response: DataResponse
     )
 
-    /**
-     * 下载歌词
-     */
-    abstract fun downLoadLRC(
-        context: Application,
-        lrc: String,
-        path: String,
-        dataResponse: DataResponse
-    )
 
 
     /**

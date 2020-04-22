@@ -2,12 +2,12 @@ package com.ilongyuan.lysdk.net
 
 import android.util.Log
 import com.ilongyuan.lysdk.common.BaseConstance
-import com.ilongyuan.lysdk.manager.HiFiveManager.Companion.APP_ID
-import com.ilongyuan.lysdk.manager.HiFiveManager.Companion.DEVICE_ID
-import com.ilongyuan.lysdk.manager.HiFiveManager.Companion.NONCE
-import com.ilongyuan.lysdk.manager.HiFiveManager.Companion.PG
-import com.ilongyuan.lysdk.manager.HiFiveManager.Companion.PLATFFORM
-import com.ilongyuan.lysdk.manager.HiFiveManager.Companion.SECRET
+import com.ilongyuan.lysdk.manager.LyManager.Companion.APP_ID
+import com.ilongyuan.lysdk.manager.LyManager.Companion.DEVICE_ID
+import com.ilongyuan.lysdk.manager.LyManager.Companion.NONCE
+import com.ilongyuan.lysdk.manager.LyManager.Companion.PG
+import com.ilongyuan.lysdk.manager.LyManager.Companion.PLATFFORM
+import com.ilongyuan.lysdk.manager.LyManager.Companion.SECRET
 import com.ilongyuan.lysdk.net.Encryption.Companion.getNum
 import com.ilongyuan.lysdk.net.Encryption.Companion.hmacSHA256Andeccry64
 import com.ilongyuan.lysdk.utils.NetWorkUtils
